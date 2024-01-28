@@ -1,0 +1,15 @@
+// simple JS code lines:
+console.log("Hello TypeScript!");
+let num1 = 5; // In JS:
+
+// In TypeScript:
+// Creating a variable of type "number"
+let num2: number = 7;
+
+// Error: Type 'string' is not assignable to type 'number'
+// value = "ABC";
+
+
+let userAge = 28;
+// code below will generate the same error:
+// age = "Test";
