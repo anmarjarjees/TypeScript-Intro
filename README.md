@@ -2,9 +2,9 @@
 Quick demonstration for learning the essentials of TypeScript before Angular Framework.
 
 # What's TypeScript?
-- [TypeScript](https://www.typescriptlang.org/) is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.
+- [TypeScript](https://www.typescriptlang.org/) is a superset of JavaScript. It is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.
 . Are used for Front-End with Angular JS Framework or Back-End with Node.JS
-- The default language for Angular JavaScript Frameworks since version 2
+- It is used extensively as a default language in the development of Angular applications since version Angular 2, but it can also be used with any JavaScript framework or library.
 - Includes features of ES6 (EcmaScript 6) and ES7
 - All TypeScript files are compiled to JavaScript
 - TypeScript file uses .js and .tsx extensions
@@ -23,11 +23,12 @@ Notice that:
 # Dynamically vs Statically Typed Languages
 To recap, as we have experienced before, we have two types of programming languages:
 - **Dynamically Typed Languages:** Variable types are determined and checked at runtime rather than during compilation (Data Type is not explicitly named in our code) 
-    - Examples: Java, C#, C/C++
+  - Examples: JavaScript, PHP, Python
+  
 - **Statically Typed Languages:** Variable types must be determined during the compilation time before the 
 runtime (Data type is explicitly assigned to each variable) 
-    - Examples: JavaScript, PHP, Python
-
+  - Examples: Java, C#, C/C++
+    
 # Environment Setup (with VS Code):
 Notice since we are going to run the commands using "npm" (Node Package Manager) we need to have "NodeJS" installed first, please refer to my repo about ["Starting with Node"](https://github.com/anmarjarjees/node.js-start) if you need.
 Installing [TypeScript compiler](https://code.visualstudio.com/docs/typescript/typescript-compiling).
@@ -35,22 +36,22 @@ Installing [TypeScript compiler](https://code.visualstudio.com/docs/typescript/t
 - You can right click any folder => Open in Integrated Terminal
 - In the "Terminal" window: you can
     - Install typescript globally to be available for the entire system (OS). Using "-g" for global (being able to access TS from any folder)
-    ```
-    npm i -g typescript
-    ```
-    - Install it locally for this project (within its folder):
-    ```
-    npm i --save-dev typescript
-    ```
+      ```
+      npm i -g typescript
+      ```
+  - Install it locally for this project (within its folder):
+      ```
+      npm i --save-dev typescript
+      ```
 
-NOTES: 
+**For Mac Users:**
 1. Mac users need to add sudo "Super User Do :-)":
-```
-sudo npm i -g typescript
-```
+    ```
+    sudo npm i -g typescript
+    ```
 2. We can use the full word "install" instead of just "i"
 
-Remember that npm command will create the "package.json" file as usual. with TS, this json file will only include:
+Remember that npm command will create the **"package.json"** file as usual. with TS, this json file will only include:
 ```
 {
   "dependencies": {
@@ -86,22 +87,35 @@ tsc --v
 ```
 
 ## IMPORTANT NOTE:
-When we install TypeScript locally by using:
-```
-npm install --save-dev typescript
-```
+**Please be advised that you need to run the fist command for installing TypeScript globally:**
+  ```
+  npm i -g typescript
+  ```
+You will need to have the administrative privileges. If you are not an Admin user, you will need to:
+1. Install TypeScript locally using the same command as explained above:
+    ```
+    npm i --save-dev typescript
+    ```
+  
+    or when installing it locally for development mode using:
+      ```
+      npm i --save-dev typescript
+      ```
 
-or when installing it locally for development mode using:
-```
-npm i --save-dev typescript
-```
 
-We all have this error when run this simple code just to test the TypeScript version:
+2. Use "npx" as a workaround. npx runs the binary from the local node_modules if available, or it will temporarily install the package and run it.
+    ```
+    npx tsc --version
+    ```
+
+For this reason, you might encounter an error when running this simple command to test the TypeScript version:
 ```
 tsc --version
 ```
-This is because we installed TS locally and TSC is not installed locally in the folder "PATH", and we need to modify the vscode json file. To start with it will be much easier to install TS globally.
-
+This is because **tsc** is not installed globally in the system PATH when TypeScript is installed locally. For the simplest setup, it's recommended to install TypeScript globally. However, if you prefer a local installation, you can use **npx** to run the TypeScript compiler as explained above also:
+```
+npx tsc --version
+```
 # Start Coding :-)
 Starting with the basics, please refer to the folder **"basics"** first. We can use "cd folderName" "cd.." "cd". **(Notice that I had to rename the .ts extensions for the two test files to "ts1" and "ts2" to avoid the errors or any variables conflict  based on the advanced changes that we will do later)**
 1. Creating test1.js file inside your project folder named for example: "Basics". 
@@ -140,7 +154,7 @@ We can also run the following native tsc command that works with any CLI that wi
 ```
 tsc --init
 ```
-Please refer to my changes/comments with "AJ" in the "tsconfig.json" file
+** Dear students, please refer to my changes/comments with "AJ" in the "tsconfig.json" file**
 
 ## For an empty tsconfig.json file:
 In case you have created any empty tsconfig file:
@@ -180,7 +194,7 @@ tsc
 ```
 
 ### To recap:
-- Write our code (TypesSript) in .ts files
+- Write our code (TypesScript) in .ts files
 - Run the following command from any sub-folder withing our project since we installed TS globally:
 ```
 tsc
@@ -213,7 +227,7 @@ node index
 ```
 
 ### The main code:
-We can refer to the content of the folder "src". 
+We can refer to the content of the folder **"src"**. 
 To just watch the first file "demo1.ts" without compiling it:
 ```
 tsc --watch demo1.ts
